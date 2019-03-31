@@ -189,7 +189,7 @@ section#about h2.sm-heading {
   display: grid;
   grid-gap: 30px;
   grid-template-areas:
-    "bioimage bio bio"
+    "bio bio bio"
     "job1 job2 job3";
   grid-template-columns: repeat(3, 1fr);
 }
