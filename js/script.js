@@ -3,8 +3,7 @@
 var typed = new Typed(".sm-heading", {
   strings: [
     // "Front End Web Developer",
-    "Front End Web Developer",
-    "a programmer",
+    "Web Developer",
     "html, css, javaScript, React Js, git"
   ],
   typeSpeed: 50,
