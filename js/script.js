@@ -1,10 +1,10 @@
 // Select DOM Items
 
-var typed = new Typed(".sm-heading", {
+var typed = new Typed(".typedjs", {
   strings: [
     // "Front End Web Developer",
     "Web Developer",
-    "html, css, javaScript, React Js, git"
+    "front-end development, html, css, javaScript, React Js, git"
   ],
   typeSpeed: 50,
   backSpeed: 50,

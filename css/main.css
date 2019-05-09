@@ -1,10 +1,11 @@
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: #1b2127;
-  color: #fff;
+  background: rgb(238, 237, 237);
+  color: #333;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -12,19 +13,27 @@ body {
   line-height: 1.5;
 }
 
-/* ---------------------.menu-branding, */
-
-.menu-branding {
-  color: antiquewhite;
-  display: inline-block;
-  margin: 23px;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.menu-branding h1 {
+/* ***********************Menu *** */
+
+nav.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.6rem;
+}
+
+.menu-branding a {
+  
   letter-spacing: 3px;
   font-size: 1.8rem;
   color: #bb671e;
 }
+
 
 .menu-nav {
   display: flex;
@@ -36,16 +45,11 @@ body {
   transition: all 0.5s ease-out;
 }
 
-.menu .nav-item.current > a {
-  color: #bb671e;
-}
-
 .menu .nav-link {
   display: inline-block;
-  position: relative;
   font-size: 20px;
   text-transform: uppercase;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   font-weight: 300;
   color: #fff;
   text-decoration: none;
@@ -54,7 +58,6 @@ body {
 .menu .nav-link:hover {
   color: #bb671e;
   border-bottom: 1px solid #bb671e;
-  padding-bottom: 2px;
 }
 
 /* -------------Landing Page styling -------------- */
@@ -66,7 +69,8 @@ div#bg-img {
   z-index: -5;
 }
 div.opacity {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
 }
 
 h1,
@@ -79,7 +83,8 @@ h3 {
 h1.lg-heading,
 h2.lg-heading,
 h3.lg-heading {
-  font-size: 5rem;
+  font-size: 3.5rem;
+  margin: 3rem;
 }
 h1.sm-heading,
 h2.sm-heading,
@@ -89,9 +94,10 @@ h3.sm-heading {
   background: #1b2127;
 }
 
-h2.backed {
-  background-color: transparent;
+.md-heading {
+  font-size: 2rem;
 }
+
 
 a {
   color: #fff;
@@ -106,7 +112,7 @@ header {
 }
 
 .text-secondary {
-  color: #bb671e;
+  color: #FF5733;
 }
 
 main#home {
@@ -129,21 +135,28 @@ main#home h1 {
 /* typed js words */
 div.typedjs {
   width: 100%;
-  height: 100px;
+  height: 60px;
+  font-size: 1.6rem;
   background-color: transparent;
+
 }
 
 /*  ----------Social Media Icons ------------- */
 main .icons {
   margin: 1rem;
+  height: 50px;
+  line-height: 50px;
 }
 main .icons a {
   padding: 1rem;
+  transition: 1s all ease-in-out;
 }
 
 main .icons a:hover {
   color: #bb671e;
   transition: all 0.5s ease-out;
+  font-size: 1.4rem;
+  padding: 0;
 }
 
 .icons a.linkedin {
@@ -166,44 +179,47 @@ main .project-btn {
   font-size: 1.2rem;
   outline: none;
   padding: 10px 22px;
-  border: 2px solid #bb671e;
+  border: 2px solid #0077b5;
   border-radius: 5px;
   transition: all 0.5s ease-out;
 }
 .project-btn a:hover {
-  background-color: #bb671e;
+  background-color: #0077b5;
 }
 
 /* ------------------------ABOUT SECTION ------------- */
 
 section#about {
   padding: 50px 20px;
-  background-color: #fafafa;
-  color: #1b2127;
+  background-color: #fff;
+  color: #333;
 }
 
 section#about h2.sm-heading {
   color: #fff;
 }
+
+.bio {
+  width: 60%;
+  margin: 20px auto;
+  padding-bottom: 20px;
+  text-align: center;
+}
 .about-info {
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 25px;
   grid-template-areas:
-    "bio bio bio"
     "job1 job2 job3";
   grid-template-columns: repeat(3, 1fr);
 }
-.about-info .bio-image {
-  grid-area: bioimage;
-  margin: auto;
-  border-radius: 50%;
-  border: #bb671e 3px solid;
-}
+
 
 h3.bio-heading {
   margin-bottom: 20px;
   padding-bottom: 5px;
   border-bottom: 1px solid #bb671e;
+  background-color: #0077b5;
+  border-radius: 5px;
 }
 .about-info .bio {
   grid-area: bio;
@@ -218,30 +234,40 @@ h3.bio-heading {
   grid-area: job3;
 }
 .about-info .job {
-  background: #1b2127;
-  color: #fff;
+  background: #fff;
+  color: #333;
   padding: 0.7rem;
-  border-bottom: #bb671e 5px solid;
+  border-bottom: #bb671e 3px solid;
+  box-shadow: 8px 6px 26px -8px rgba(23,22,23,1);
+  border-radius: 10px;
+  transition: all 0.8s ease-in-out;
+}
+
+.about-info .job:hover {
+  box-shadow: 8px 6px 51px -5px rgba(23,22,23,1);
 }
 
 /* ----------------WORK SECTION ----------------- */
 
 section#work {
   padding: 50px 20px;
+  background-color: 	rgb(234, 236, 241);
+  color: #000;
 }
 .projects {
-  display: grid;
-  grid-gap: 0.7rem;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  /* grid-gap: 0.7rem;
+  grid-template-columns: auto auto; */
+  justify-content: space-between;
 }
-.projects img {
+/* .projects img {
   width: 100%;
   height: 28vh;
   border: 3px #fff solid;
-}
-.projects img:hover {
+} */
+.projects .card img {
   opacity: 0.8;
-  border-color: #bb671e;
+ height: auto;
   transition: all 0.5s ease-out;
 }
 
@@ -249,11 +275,79 @@ section#work {
   position: relative;
 }
 
+.card {
+  /* Add shadows to create the "card" effect */
+  width: 48%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+/* ************************************************ */
+
+.project-box {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.project-text {
+  padding: 1.6rem;
+  text-align: center;
+}
+
+.project-box div {
+  flex: 1 1 49%;
+}
+
+.project-box .fin-img {
+  background: url("../img/projects/pro1.png") no-repeat center center/cover;
+  height: 400px;
+}
+
+.project-box .simon-img {
+  background: url("../img/projects/pro2.png") no-repeat center center/cover;
+  height: 400px;
+}
+
+.project-box .clonee-img {
+  background: url("../img/projects/pro3.png") no-repeat center center/cover;
+  height: 400px;
+}
+
+/*  Section Price */
+/* #price {
+  display: flex;
+}
+
+#price div {
+  flex: 1;
+} */
+
+/* #price .price-text {
+  padding: 1 rem;
+} */
+
+/* .prices {
+  display: flex;
+} */
+
+#project2 .price-img {
+  background: url("../img/projects/pro3.png") no-repeat center center/cover;
+  height: 400px;
+}
+
+#project2 a {
+  color: #000;
+}
 /* ----------------CONTACT SECTION --------------------- */
 
 section#contact {
   padding: 50px 20px;
-  background-color: #fafafa;
+  background-color: #fff;
   color: #1b2127;
 }
 
@@ -272,7 +366,6 @@ section#contact {
   transition: all 0.5s ease-out;
 }
 .boxes div:hover {
-  padding: 0.5rem 1.5rem;
   background: #bb671e;
   color: #000;
 }
@@ -280,32 +373,33 @@ section#contact {
   color: #000;
 }
 
-.btn,
-.btn-dark,
-.btn-light {
-  display: block;
-  padding: 0.5rem 1rem;
-  border: 0;
-  margin-bottom: 0.3rem;
+.btn {
+  display: inline-block;
+  padding: 0.6rem 2.5rem;
+  border-radius: 30px;
+  margin: 0.8rem;
   text-align: center;
+  font-size: 1.3rem;
+  transition: 0.5s all ease-in-out;
 }
 
 .btn:hover,
 .btn-dark:hover,
 .btn-light:hover {
-  background: #bb671e;
-  color: #000;
-}
-
-.btn-dark {
-  background: black;
+  background: #00507a;
   color: #fff;
 }
 
+.btn-dark {
+  background: #0077b5;
+  color: #fff;
+  
+}
+
 .btn-light {
-  min-height: 62px;
-  background: #a5d1ff;
-  color: #333;
+  background: transparent;
+  border: 1px solid #0077b5;
+  color: #000;
 }
 
 #main-footer {
